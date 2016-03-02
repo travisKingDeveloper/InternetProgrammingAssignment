@@ -127,7 +127,7 @@ function checkCheckBoxes()
   var errorMessage = "";
   var returnError = true;
 
-  var checkBoxes = document.getElementsByClassName('chkBxResetable')
+  var checkBoxes = document.getElementsByClassName('chkBxResetable');
   var aboutThePerson = "";
   var messages = ["NULL" , "NULL" , "NULL" , "NULL"];
 
@@ -137,7 +137,7 @@ function checkCheckBoxes()
 
     if(checkBoxes[i].id == "anonymousCheckBx")
     {
-      continue;
+
     }
     else if(checkBoxes[i].id == "collegeChkBx")
     {
@@ -211,19 +211,13 @@ function checkMessage()
 
 function verifyName()
 {
-  if(document.getElementById('NameTxtBx').value == "")
-    return false;
-  else
-    return true;
+  return document.getElementById('NameTxtBx').value != "";
 }
 
 
 function verifyMessage()
 {
-  if(document.getElementById('MessageTxtArea').value == "")
-    return false;
-  else
-    return true;
+  return document.getElementById('MessageTxtArea').value != "";
 }
 
 function checkEmail()
@@ -237,10 +231,7 @@ function verifyEmail()
 
   //Not Checking the email due to the fact that the user will have to send the email through there prefered outlook
   //Once migrated to something else this will be checked
-  if(document.getElementById('EmailTxtBx').value == "")
-    return false;
-  else
-    return true;
+  return document.getElementById('EmailTxtBx').value != "";
 }
 
 function EmailTravis(message , emailAddress)
