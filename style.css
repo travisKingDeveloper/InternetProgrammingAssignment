@@ -1,0 +1,94 @@
+    #section {
+        float:left;
+        padding:0px;
+        border-style: none;
+        background-image: url("repeating-wood-background.jpg");
+        height: 100%;
+    }
+    #paragraph {
+      /*background-color: black;*/
+      color:white;
+      text-align:left;
+      /*background-image: url("repeating-wood-background.jpg");*/
+      width: 92%;
+      float: right;
+      margin: 0 0 20px 20px;
+      padding: 0 0 5px 5px;
+    }
+    #contactForm {
+      width: auto;
+      margin: 60px auto;
+      padding: 5px;
+      -moz-box-shadow: 0px 0px 8px #444;
+      -webkit-box-shadow: 0px 0px 8px #444;
+      float: left;
+    }
+    #footer{
+        padding: 5px;
+        font-style:italic;
+        font-size: 20px;
+    }
+    tr td.estimation{
+        padding: 5px;
+        border: 1px groove grey;
+         
+    }
+    .tableDisplay {
+        width: 300px;
+        margin: 0 0 20px 20px;
+
+    }
+    ul.SideBar {
+        list-style-type: none;
+        margin: 0;
+        width: 7%;
+        position: fixed;
+        height: 98%;
+        overflow: auto;
+        padding: 0;
+        /*background-image: url("repeating-wood-background.jpg");*/
+        border:1px solid darkgrey;
+    }
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 0 8px 16px;
+        text-decoration: none;
+    }
+
+    li a.active {
+        background-color: darkgreen;
+        color: white;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #555;
+        color: grey;
+    }
+    a:link, a:visited {
+        display: block;
+        color:lightgrey;
+        font-style: italic;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    p:default {
+      font-size: 10px;
+      color:black;
+      font-family: sans-serif;
+    }
+    h1 , h2 , h3, h4, h5, h6{
+      text-align: center;
+    }
+    body:default{
+      margin: 0;
+    }
+    hr:default{
+      color:black;
+      width: 5px;
+    }
+    li{
+      list-style-image:url("bullet_triangle.png");
+      position: static;
+    }
