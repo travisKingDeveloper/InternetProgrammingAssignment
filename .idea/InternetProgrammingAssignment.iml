@@ -5,6 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/assign1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assign2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assign3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assign4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assign5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assign6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assign7" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
