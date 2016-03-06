@@ -92,3 +92,7 @@
       list-style-image:url("bullet_triangle.png");
       position: static;
     }
+
+    .learningObjectives a{
+        text-align:center;
+    }
