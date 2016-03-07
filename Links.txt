@@ -12,3 +12,6 @@ bullet points
 
 http://www.html-form-guide.com/contact-form/creating-a-contact-form.html
 starting point of contact form
+
+https://www.bing.com/images/search?q=dummy+picture&view=detailv2&&id=AA8070FA5D139CF5C36D373960ABD59F98D94254&selectedIndex=2&ccid=MhBhs5VF&simid=608036498084990349&thid=OIP.M321061b3954599a07f88195e79b560a7H0&ajaxhist=0
+picture of dummy
