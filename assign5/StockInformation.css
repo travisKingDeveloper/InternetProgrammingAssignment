@@ -1,0 +1,74 @@
+body{
+    height: 100%;
+}
+
+#loginBackgroundPage
+{
+    width: 100%;
+}
+
+#loginCenterPage
+{
+    margin: 10% auto;
+    width:20%;
+    border: thick whitesmoke solid;
+    border-radius: 10px;
+}
+.error
+{
+    color:red;
+    font-style: italic;
+    margin:10%
+}
+
+#loginCenterPage table
+{
+    margin:10%;
+}
+
+.loginInput
+{
+    width: 100%
+}
+
+.loginSubmit
+{
+    width:100%;
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+#landingPageNavigation {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+    overflow: hidden;
+    /*position: fixed;*/
+    /*top: 0;*/
+    width: 100%;
+    border: 1px solid darkgrey;
+    border-radius:10px;
+}
+
+#landingPageNavigation li {
+    float: left;
+    list-style-image: inherit;
+}
+
+#landingPageNavigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#landingPageNavigation li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.floatRight{
+    float:right;
+}
+
+

@@ -54,6 +54,7 @@ ul.SideBar {
     padding: 0;
     /*background-image: url("repeating-wood-background.jpg");*/
     border: 1px solid darkgrey;
+    border-radius:10px;
 }
 
 li a {
