@@ -14,6 +14,14 @@ body{
     border: thick whitesmoke solid;
     border-radius: 10px;
 }
+#myProfileCenterPage
+{
+    margin-left:35%;
+    width:25%;
+    border: thin whitesmoke solid;
+    border-radius: 10px;
+    margin-top: 5%
+}
 .error
 {
     color:red;
@@ -24,6 +32,12 @@ body{
 #loginCenterPage table
 {
     margin:10%;
+}
+#myProfileCenterPage table
+{
+    margin-left:15%;
+    margin-right:15%;
+    margin-top: 5%;
 }
 
 .loginInput
@@ -67,8 +81,34 @@ body{
     background-color: #111;
 }
 
-.floatRight{
+#landingPageNavigation li.floatRight{
     float:right;
 }
 
+#myProfileTableInformation
+{
+    margin-left:15%;
+    margin-right:15%;
+    margin-bottom: 5%;
+    background-color:transparent;
+    color:whitesmoke;
+    width:70%;
+}
 
+#PortfolioCenterTable
+{
+    margin-left:25%;
+    width:50%;
+    border: thin whitesmoke solid;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+#PortfolioCenterTable table tr td
+{
+    margin-left:20px;
+}
+#PortfolioCenterTable table
+{
+    margin-left:15%;
+    margin-right: 15%;
+}

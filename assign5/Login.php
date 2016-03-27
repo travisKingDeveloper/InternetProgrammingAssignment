@@ -9,11 +9,9 @@
 //http://stackoverflow.com/questions/1545357/how-to-check-if-a-user-is-logged-in-in-php
 include 'LoginManagement.php';
 
-session_start();
-
-if ((isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true))
+if (CheckUserStatus())
 {
-    header( "Location: ./LandingPage.php" );
+    header( "Location: ./MyPortfolio.php" );
 }
 else if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -21,13 +19,10 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST")
     $name = $_REQUEST['UserName'];
     $password = $_REQUEST['Password'];
 
-    if(ConfirmManagement($name, $password))
+    if(Login($name, $password))
     {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $name;
-
         //Redirect to landing page
-        header( "Location: ./LandingPage.php" );
+        header( "Location: ./MyPortfolio.php" );
     }
     else
     {
@@ -60,6 +55,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST")
         <h1>COP 4813: Internet Programming</h1>
         <h2>ePortfolio for COP4813: Internet Programming</h2>
         <h3>Travis Allen King</h3>
+        <hr/>
 
         <form id="loginBackgroundPage" method="post" action="<?php echo(htmlspecialchars($_SERVER['PHP_SELF']));?>">
                 <div id="loginCenterPage">
