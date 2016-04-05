@@ -1,19 +1,23 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: travi_000
+ * Date: 4/5/2016
+ * Time: 6:11 PM
+ */
+
+include '../../Global/RenderScripts/MasterNavigationBar.php';
+
+?>
 <!DOCTYPE html>
 <html id="section">
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
     <title>About Me</title>
 </head>
 <body>
 
-<ul class="SideBar">
-    <li><a href="../index.html">Home</a></li>
-    <li><a class="active" href="../assign1/index.html">About Me</a></li>
-    <li><a href="../assign2/index.html">Contact Me</a></li>
-    <li><a href="../assign3/index.html">Statistics</a></li>
-    <li><a href="../assign4/index.html">Graphics</a></li>
-    <li><a href="../assign5/Login.php">Stock Portfolio</a></li>
-</ul>
+<?php MasterNavigationBar(2); ?>
 
 <div id="paragraph">
     <h1>COP 4813: Internet Programming</h1>
@@ -65,7 +69,7 @@
     </p>
     <hr/>
     <h3>Course Information</h3>
-    <img align="right" src="../TravisAndKari.jpg" alt="us chillin"/>
+    <img align="right" src="../../Assets/TravisAndKari.jpg" alt="us chillin"/>
     <table width="400">
         <tr>
             <th>Course Title</th>
@@ -113,11 +117,12 @@
     <hr/>
     <div id="footer">
         <p><font color="Green">"I believe that at the end of the century the
-            use of words and general educated opinion will have altered so much that one will be able to
-            speak of machines thinking without expecting to be contradicted" - Alan Turing</font>
+                use of words and general educated opinion will have altered so much that one will be able to
+                speak of machines thinking without expecting to be contradicted" - Alan Turing</font>
         <p>
     </div>
 </div>
 
 </body>
 </html>
+

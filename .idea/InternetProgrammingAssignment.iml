@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/assign5" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assign6" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assign7" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Global" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Global/DatabaseConnection" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

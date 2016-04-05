@@ -13,38 +13,35 @@ use Scheb\YahooFinanceApi\HttpClient;
 use Scheb\YahooFinanceApi\Exception\ApiException;
 use Scheb\YahooFinanceApi\Exception\HttpException;
 
-include './../YahooFinanceAPI/HttpClient.php';
-include './../YahooFinanceAPI/ApiClient.php';
-include './../YahooFinanceAPI/Exception/ApiException.php';
-include './../YahooFinanceAPI/Exception/HttpException.php';
+include './../../YahooFinanceAPI/HttpClient.php';
+include './../../YahooFinanceAPI/ApiClient.php';
+include './../../YahooFinanceAPI/Exception/ApiException.php';
+include './../../YahooFinanceAPI/Exception/HttpException.php';
 
 function PopulateTable()
 {
     //GET INFORMATION BASED OFF OF USER
 
     //POPULATE A TABLE USING THIS INFORMATION
-    try {
+    try
+    {
         $client = new ApiClient();
 
         $data = $client->getQuotesList(array("YHOO", "GOOG")); //Multiple stocks at once
 
         foreach ($data as $key => $value)
             echo $key . " " . $value;
-    } catch (Exception $e) {
+    }
+    catch (Exception $e)
+    {
         echo $e->getMessage(), "\n";
     }
-
-    echo "HAHHAA";
-    echo "HAHHAA";
     //END PSUEDOCODE
 }
 
-/**
- * @param $StockTick
- * @param $NumberStock
- */
 function AddStock($StockTick, $NumberStock)
 {
+    //Move Processing of data to client side
     $_SESSION['error'] = "";
     if ($NumberStock < 0)
     {
@@ -80,15 +77,23 @@ function AddStock($StockTick, $NumberStock)
         }
     }
 }
+
+function PrintTableDatabase()
+{
+
+}
+
+//Deprecated
 function AddStockFile($Stock, $DollarPerShare, $NumberOfShares)
 {
-    $myfile = fopen("./../TestPortfolio", "a") or die("Unable to open file!");
+    $myfile = fopen("./../../TestPortfolio", "a") or die("Unable to open file!");
 
     fwrite($myfile, $Stock.'|'.$DollarPerShare.'|'.$NumberOfShares.'|'.strval(number_format(floatval($DollarPerShare) * intval($NumberOfShares), 2)."\n"));
 }
-function PrintTable()
+
+function PrintTableFile()
 {
-    $myfile = fopen("./../TestPortfolio", "r") or die("Unable to open file!");
+    $myfile = fopen("./../../TestPortfolio", "r") or die("Unable to open file!");
 
     $data = array("Stock Tick Identifier" , "Individual Stock Value" , "Number Of Stock" , "Portfolio Value");
     echo "<h2>"."Portfolios"."</h2>";
@@ -97,14 +102,14 @@ function PrintTable()
     $totalWorth = 0.0;
     while(!feof($myfile))
     {
-            $ProspectData = (fgets($myfile));
+        $ProspectData = (fgets($myfile));
 
-            if(substr_count($ProspectData, "//") == 0)
-            {
-                $data = str_getcsv($ProspectData, "|");
-                echo "<tr>"."<td>".$data[0]."</td>"."<td>".$data[1]."</td>"."<td>".$data[2]."</td>"."<td>".$data[3]."</td>"."</tr>";
-                $totalWorth += floatval(str_replace(",", "",$data[3]));
-            }
+        if(substr_count($ProspectData, "//") == 0)
+        {
+            $data = str_getcsv($ProspectData, "|");
+            echo "<tr>"."<td>".$data[0]."</td>"."<td>".$data[1]."</td>"."<td>".$data[2]."</td>"."<td>".$data[3]."</td>"."</tr>";
+            $totalWorth += floatval(str_replace(",", "",$data[3]));
+        }
     }
     echo "<tr>"."<td>"."Total Worth"."</td>"."<td></td><td></td>"."<td>".number_format($totalWorth, 2)."</td>"."</tr>";
     fclose($myfile);

@@ -1,8 +1,19 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: travi_000
+ * Date: 4/5/2016
+ * Time: 6:05 PM
+ */
+
+include './../../Global/RenderScripts/MasterNavigationBar.php';
+
+?>
 <!DOCTYPE html>
 <html id="section">
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src="ticTacToeControl.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
+    <script src="../ticTacToeControl.js"></script>
     <title>Statistical Information</title>
     <meta charset="utf-8"/>
     <script type="text/javascript">
@@ -29,14 +40,16 @@
 
 </head>
 <body>
-<ul class="SideBar">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../assign1/index.html">About Me</a></li>
-    <li><a href="../assign2/index.html">Contact Me</a></li>
-    <li><a href="../assign3/index.html">Statistics</a></li>
-    <li><a class="active" href="../assign4/index.html">Graphics</a></li>
-    <li><a href="../assign5/Login.php">Stock Portfolio</a></li>
-</ul>
+
+<?php MasterNavigationBar(5);?>
+<!--<ul class="SideBar">-->
+<!--    <li><a href="../../HomePage/Views/index.html">Home</a></li>-->
+<!--    <li><a href="index.html">About Me</a></li>-->
+<!--    <li><a href="index.html">Contact Me</a></li>-->
+<!--    <li><a href="index.html">Statistics</a></li>-->
+<!--    <li><a class="active" href="index.html">Graphics</a></li>-->
+<!--    <li><a href="Login.php">Stock Portfolio</a></li>-->
+<!--</ul>-->
 <div id="paragraph">
     <h1>COP 4813: Internet Programming</h1>
     <h2>ePortfolio for COP4813: Internet Programming</h2>
@@ -65,7 +78,7 @@
                     I have created an algorithm that will perfectly predict how to prevent you from making a victory in
                     the game. So I'll prove to you how to make sure you never lose again in Tic Tac Toe for Dummies !
                 </p>
-                <iframe src="../dummyPic.jpg" width="400" height="340" frameborder="0"></iframe>
+                <iframe src="../../Assets/dummyPic.jpg" width="400" height="340" frameborder="0"></iframe>
             </td>
         </tr>
     </table>
@@ -113,8 +126,8 @@
     <hr/>
     <div id="footer">
         <p><font color="Green">"I believe that at the end of the century the use of words and general educated opinion
-            will have altered so much that one will be able to speak of machines thinking without expecting to be
-            contradicted" - Alan Turing</font>
+                will have altered so much that one will be able to speak of machines thinking without expecting to be
+                contradicted" - Alan Turing</font>
         <p>
     </div>
 </div>

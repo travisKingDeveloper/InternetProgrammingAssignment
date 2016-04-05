@@ -5,8 +5,10 @@
  * Date: 3/16/2016
  * Time: 12:43 PM
  */
-include 'LoginManagement.php';
-include 'PortfolioManagement.php';
+include './../Controller/LoginManagement.php';
+include './../Controller/PortfolioManagement.php';
+include './../RenderScripts/NavigationBar.php';
+include './../../Global/RenderScripts/MasterNavigationBar.php';
 
 if (!CheckUserStatus())
 {
@@ -17,22 +19,15 @@ if (!CheckUserStatus())
 <!DOCTYPE html>
 <html id="section">
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="StockInformation.css"/>
-    <script src="../statistics.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../StockInformation.css"/>
+    <script src="../../statistics.js"></script>
     <title>Statistical Information</title>
     <meta charset="utf-8"/>
 
 </head>
 <body>
-<ul class="SideBar">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../assign1/index.html">About Me</a></li>
-    <li><a href="../assign2/index.html">Contact Me</a></li>
-    <li><a href="../assign3/index.html">Statistics</a></li>
-    <li><a href="../assign4/index.html">Graphics</a></li>
-    <li><a class="active" href="../assign5/Login.php">Stock Portfolio</a> </li>
-</ul>
+<?php MasterNavigationBar(6);?>
 
 <div id="paragraph">
 
@@ -41,15 +36,10 @@ if (!CheckUserStatus())
     <h3>Travis Allen King</h3>
     <hr/>
 
-    <ul id="landingPageNavigation">
-        <li><a href="Login.php">My Portfolio</a></li>
-        <li><a href="AddStock.php">Add Stock</a></li>
-        <li class="floatRight"><a href="LogOut.php">Log Out</a></li>
-        <li class="floatRight"><a class="active" href="MyProfile.php">Welcome <?php echo $_SESSION['username'] ?></a></li>
-    </ul>
+    <?php NavigationBar(3);?>
 
     <div id="myProfileCenterPage">
-        <form action="UpdateProfile.php" method="post">
+        <form action="../POSTScripts/UpdateProfile.php" method="post">
             <div id="myProfileTableInformation">
                 <h2>Edit Profile</h2>
             </div>

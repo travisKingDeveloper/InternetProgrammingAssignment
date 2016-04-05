@@ -7,57 +7,33 @@
  */
 
 //http://stackoverflow.com/questions/1545357/how-to-check-if-a-user-is-logged-in-in-php
-include 'LoginManagement.php';
-
-if (CheckUserStatus())
-{
-    header( "Location: ./MyPortfolio.php" );
-}
-else if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    // collect value of input field
-    $name = $_REQUEST['UserName'];
-    $password = $_REQUEST['Password'];
-
-    if(Login($name, $password))
-    {
-        //Redirect to landing page
-        header( "Location: ./MyPortfolio.php" );
-    }
-    else
-    {
-        global $errorMessage;
-        $_SESSION['error'] = "Login Not Valid, please try a different User Name and Password";
-    }
-}
+include './../Controller/LoginManagement.php';
+include './../RenderScripts/NavigationBarUnAuthorized.php';
+include './../../Global/RenderScripts/MasterNavigationBar.php';
 ?>
 
 <!DOCTYPE html>
 <html id="section">
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css"/>
-    <link rel="stylesheet" type="text/css" href="StockInformation.css"/>
-    <script src="../statistics.js"></script>
+    <link rel="stylesheet" type="text/css" href="../StockInformation.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css"/>
+    <script src="../../statistics.js"></script>
     <title>Statistical Information</title>
     <meta charset="utf-8"/>
 
 </head>
 <body>
-    <ul class="SideBar">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../assign1/index.html">About Me</a></li>
-        <li><a href="../assign2/index.html">Contact Me</a></li>
-        <li><a href="../assign3/index.html">Statistics</a></li>
-        <li><a href="../assign4/index.html">Graphics</a></li>
-        <li><a class="active" href="../assign5/Login.php">Stock Portfolio</a></li>
-    </ul>
+    <?php MasterNavigationBar(6);?>
+
     <div id="paragraph">
         <h1>COP 4813: Internet Programming</h1>
         <h2>ePortfolio for COP4813: Internet Programming</h2>
         <h3>Travis Allen King</h3>
         <hr/>
 
-        <form id="loginBackgroundPage" method="post" action="<?php echo(htmlspecialchars($_SERVER['PHP_SELF']));?>">
+        <?php NavigationBar(1); ?>
+
+        <form id="loginBackgroundPage" method="post" action="./../POSTScripts/Login.php">
                 <div id="loginCenterPage">
                     <h3>Stock Portfolio Manager Login</h3>
                     <table>

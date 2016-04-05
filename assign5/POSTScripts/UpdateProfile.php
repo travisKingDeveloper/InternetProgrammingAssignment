@@ -20,9 +20,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     $_SESSION['message'] = "Successfully Changed Profile";
 
-    header("Location: ./MyPortfolio.php");
+    header("Location: ./../Views/MyProfile.php");
 }
 else
 {
-    header("Location: ./MyProfile.php");
+    header("Location: ./../Views/MyProfile.php");
 }

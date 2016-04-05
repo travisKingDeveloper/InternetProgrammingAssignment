@@ -1,21 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: travi_000
+ * Date: 4/5/2016
+ * Time: 6:10 PM
+ */
+
+include '../../Global/RenderScripts/MasterNavigationBar.php';
+?>
+
 <!DOCTYPE HTML>
 <html id="section">
 <head>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
     <title>Contact Me :)</title>
-    <script src="../contactForm.js"></script>
+    <script src="../JavaScripts/contactForm.js"></script>
 </head>
 
 <body>
 
-<ul class="SideBar">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../assign1/index.html">About Me</a></li>
-    <li><a class="active" href="../assign2/index.html">Contact Me</a></li>
-    <li><a href="../assign3/index.html">Statistics</a></li>
-    <li><a href="../assign4/index.html">Graphics</a></li>
-    <li><a href="../assign5/Login.php">Stock Portfolio</a></li>
-</ul>
+<?php
+    MasterNavigationBar(3);
+?>
+
 <div id="paragraph">
     <h1> COP 4813: Internet Programming</h1>
     <h2>ePortfolio for COP4813: Internet Programming</h2>
@@ -33,9 +40,9 @@
                             <tr>
                                 <td>
                                     <!-- disabled because of the way the email is sent out
-                                  <input class="chkBxResetable" type="checkbox" id="anonymousChkBx" value="anonymousChkBx" visible="false">
+    <input class="chkBxResetable" type="checkbox" id="anonymousChkBx" value="anonymousChkBx" visible="false">
                                   <label for="anonymousChkBx" visible="false">Check if you would like to remain anonymous</label>
-                                  -->
+    -->
                                 </td>
                             </tr>
                         </table>
@@ -61,7 +68,7 @@
                             <tr>
                                 <td>
                                     <!-- disabled because of the way the email is sent out
-                                  <input id="EmailTxtBx" class="textResetable" type="email" placeholder="Email Address" />
+    <input id="EmailTxtBx" class="textResetable" type="email" placeholder="Email Address" />
                                   -->
                                 </td>
                             </tr>
@@ -72,8 +79,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    Describe Yourself
-                                    <table>
+    Describe Yourself
+    <table>
                                         <tr>
                                             <td>
                                                 <label for="collegeChkBx">I am a student</label>
@@ -114,12 +121,12 @@
                                 </td>
                                 <td width="20%"></td>
                                 <td>
-                                    How did you find this site?
+    How did you find this site?
                                     <table>
                                         <tr>
                                             <td>
-                                                Heard from a friend
-                                            </td>
+    Heard from a friend
+    </td>
                                             <td>
                                                 <input class="radioBtnResetable" type="radio" id="refRadioBtn"
                                                        name="howcome">
@@ -127,8 +134,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                Found the link online
-                                            </td>
+    Found the link online
+    </td>
                                             <td>
                                                 <input class="radioBtnResetable" type="radio" id="LinkRadioBtn"
                                                        name="howcome">
@@ -136,8 +143,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                Travis Told me to click a link
-                                            </td>
+    Travis Told me to click a link
+    </td>
                                             <td>
                                                 <input class="radioBtnResetable" type="radio" id="begChkBx"
                                                        name="howcome">
@@ -181,7 +188,7 @@
                 </form>
             </td>
             <td>
-                <img align="right" src="../Diagram1Module2IP.png" alt="Flow Chart"/>
+                <img align="right" src="../../Assets/Diagram1Module2IP.png" alt="Flow Chart"/>
             </td>
         </tr>
     </table>

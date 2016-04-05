@@ -2,7 +2,7 @@
     float: left;
     padding: 0;
     border-style: none;
-    background-image: url("repeating-wood-background.jpg");
+    background-image: url("../../Assets/repeating-wood-background.jpg");
     height: 100%;
 }
 
@@ -103,7 +103,7 @@ hr:default {
 }
 
 li {
-    list-style-image: url("bullet_triangle.png");
+    list-style-image: url("../../Assets/bullet_triangle.png");
     position: static;
 }
 
