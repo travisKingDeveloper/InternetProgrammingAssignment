@@ -5,6 +5,7 @@
  * Date: 3/16/2016
  * Time: 12:43 PM
  */
+include './../../Global/DatabaseConnection/DatabaseConnection.php';
 include './../Controller/LoginManagement.php';
 include './../Controller/PortfolioManagement.php';
 include './../RenderScripts/NavigationBar.php';
@@ -15,19 +16,6 @@ if (!CheckUserStatus())
     $_SESSION['error'] = "Please Log In";
     header( "Location: ./Login.php" );
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $_SESSION['error'] = "Test";
-    // collect value of input field
-    $StockTick = $_REQUEST['StockTickerIdentifier'];
-    $NumberStock = intval($_REQUEST['NumberOfStock']);
-
-    if(AddStock($StockTick,$NumberStock))
-    {
-       header("Location: ./MyPortfolio.php");
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <head>
     <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
     <link rel="stylesheet" type="text/css" href="../StockInformation.css"/>
-    <script src="../../statistics.js"></script>
-    <script>
-
-    </script>
-    <title>Statistical Information</title>
+    <title>Stock Portfolio Management</title>
     <meta charset="utf-8"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
 <?php MasterNavigationBar(6)?>;
@@ -58,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     <h1>Add Stock</h1>
     <hr/>
-    <form action="AddStock.php" method="post">
+    <form action="./../POSTScripts/AddStock.php" method="post">
         <div id="loginCenterPage">
             <table>
                 <div class="error">
@@ -74,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     Stock Ticker Identifier
                 </td>
                 <td>
-                    <input required class="loginInput" type="text" name="StockTickerIdentifier"/>
+                    <input autocomplete="off" required class="loginInput" type="text" name="StockTickerIdentifier" onkeyup="showHint(this.value)"/>
                 </td>
                 </tr>
                 <tr>
@@ -87,7 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 </tr>
                 <tr>
                     <td>
+                        <p><span id="txtHint"></span></p>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <input class="loginSubmit" type="submit" value="Add Stock"/>
                     </td>
@@ -95,8 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             </table>
         </div>
     </form>
-
-
 
     <div id="footer">
         <p>
@@ -109,4 +94,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     </div>
 </div>
 </body>
+<script>
+    function showHint(str) {
+
+        if (str.length == 0)
+        {
+            document.getElementById("txtHint").innerHTML = "No suggestions";
+        }
+        else
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                }
+            };
+            xmlhttp.open("GET" ,"http://45.55.228.243/assign5/AJAXScripts/GetSuggestions.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
 </html>

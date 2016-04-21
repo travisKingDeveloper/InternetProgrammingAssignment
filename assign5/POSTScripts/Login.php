@@ -7,29 +7,28 @@
  */
 
 include './../Controller/LoginManagement.php';
+include './../../Global/DatabaseConnection/DatabaseConnection.php';
 
-if (CheckUserStatus())
+
+// collect value of input field
+$name = $_POST['UserName'];
+$password = $_POST['Password'];
+
+session_start();
+
+$userId = VerifyUser($name, $password);
+
+if($userId != 0)
 {
-    header( "Location: ./../Views/MyPortfolio.php" );
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $name;
+    $_SESSION['userID'] = $userId;
+    //Redirect to landing page
+    header( "Location: ./../Views/MyPortfolio.php");///Views/MyPortfolio.php" );
 }
-else if ($_SERVER["REQUEST_METHOD"] == "POST")
+else
 {
-    // collect value of input field
-    $name = $_REQUEST['UserName'];
-    $password = $_REQUEST['Password'];
-
-    session_start();
-    if(VerifyUser($name, $password))
-    {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $name;
-        //Redirect to landing page
-        header( "Location: ./../Views/MyPortfolio.php" );
-    }
-    else
-    {
-        global $errorMessage;
-        $_SESSION['error'] = "Login Not Valid, please try a different User Name and Password";
-        header( "Location: ./../Views/Login.php" );
-    }
+    global $errorMessage;
+    $_SESSION['error'] = "Login Not Valid, please try a different User Name and Password";
+    header( "Location: ./../Views/Login.php" );
 }

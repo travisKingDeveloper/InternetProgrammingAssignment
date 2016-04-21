@@ -112,3 +112,54 @@ body{
     margin-left:15%;
     margin-right: 15%;
 }
+#UpdateStockTableInfo
+{
+    margin-top:4%;
+    min-width:45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#UpdateStockTableInfo table tr td
+{
+    padding:10px;
+}
+
+#UpdateStockTableInfo table
+{
+    border: thin whitesmoke solid;
+    border-radius: 10px;
+}
+
+#mainUpdateSpace
+{
+    min-width:100%;
+}
+
+.BackGroundLess
+{
+    background-color: transparent;
+    color: rgba(62, 255, 251, 0.46);
+}
+select option
+{
+    margin:40px;
+    background: darkslategrey;
+    color: rgba(62, 255, 251, 0.46);
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+.centerForm
+{
+    margin-top:10%;
+    margin-bottom:20%;
+    margin-left:25%;
+}
+
+.Rounded
+{
+    border-radius: 5px;
+}
+
+.notVisible
+{
+    visibility: hidden;
+}

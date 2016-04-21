@@ -5,6 +5,7 @@
  * Date: 3/16/2016
  * Time: 12:43 PM
  */
+include './../../Global/DatabaseConnection/DatabaseConnection.php';
 include './../Controller/LoginManagement.php';
 include './../Controller/PortfolioManagement.php';
 include './../RenderScripts/NavigationBar.php';
@@ -21,10 +22,9 @@ if (!CheckUserStatus())
 <head>
     <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css">
     <link rel="stylesheet" type="text/css" href="../StockInformation.css"/>
-    <script src="../../statistics.js"></script>
-    <title>Statistical Information</title>
+    <title>Stock Portfolio Management</title>
     <meta charset="utf-8"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
 <?php MasterNavigationBar(6);?>

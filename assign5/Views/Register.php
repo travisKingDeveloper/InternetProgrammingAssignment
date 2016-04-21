@@ -7,6 +7,7 @@
  */
 //http://stackoverflow.com/questions/1545357/how-to-check-if-a-user-is-logged-in-in-php
 include './../Controller/LoginManagement.php';
+include './../../Global/DatabaseConnection/DatabaseConnection.php';
 include './../RenderScripts/NavigationBarUnAuthorized.php';
 include './../../Global/RenderScripts/MasterNavigationBar.php';
 ?>
@@ -16,10 +17,9 @@ include './../../Global/RenderScripts/MasterNavigationBar.php';
 <head>
     <link rel="stylesheet" type="text/css" href="../StockInformation.css"/>
     <link rel="stylesheet" type="text/css" href="../../Global/StyleSheets/style.css"/>
-    <script src="../../statistics.js"></script>
-    <title>Statistical Information</title>
+    <title>Stock Portfolio Management</title>
     <meta charset="utf-8"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
     <?php MasterNavigationBar(6);?>
@@ -34,7 +34,7 @@ include './../../Global/RenderScripts/MasterNavigationBar.php';
 
 <form id="loginBackgroundPage" method="post" action="./../POSTScripts/Register.php">
     <div id="loginCenterPage">
-        <h3>Stock Portfolio Manager Login</h3>
+        <h3>Register New User</h3>
         <table>
             <div class="error">
                 <?php

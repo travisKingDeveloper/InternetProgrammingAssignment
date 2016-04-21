@@ -5,7 +5,7 @@
  * Date: 3/19/2016
  * Time: 9:47 AM
  */
-
+include './../../Global/DatabaseConnection/DatabaseConnection.php';
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")

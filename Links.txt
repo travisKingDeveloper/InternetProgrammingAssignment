@@ -1,4 +1,4 @@
-192.168.100.66/~n00787683/cop4813/index.html
+http://192.168.100.66/~n00787683/cop4813/HomePage/Views/Login.php
 website
 
 http://coachdawna.com/?attachment_id=1359
@@ -17,6 +17,10 @@ https://www.bing.com/images/search?q=dummy+picture&view=detailv2&&id=AA8070FA5D1
 picture of dummy
 
 Login
-testAccount
+Travis
 Password
-test
+King
+
+What I did to combat sql injection was to use SQL Stored Procedures to help to prevent the use of sql injection. I'm also pretty sure the MYSQLI
+client I used doesn't allow for the execution of multiple SQL Statements.
+

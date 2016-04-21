@@ -2,7 +2,12 @@
     float: left;
     padding: 0;
     border-style: none;
-    background-image: url("../../Assets/repeating-wood-background.jpg");
+    background-image: url("../../Assets/coolStock.jpg");
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
     height: 100%;
 }
 

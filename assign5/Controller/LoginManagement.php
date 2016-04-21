@@ -5,11 +5,10 @@
  * Date: 3/16/2016
  * Time: 4:20 PM
  */
-include './../../Global/DatabaseConnection/DatabaseConnection.php';
 
 function VerifyUser($user , $password)
 {
-    $isValid =  VerifyUserStoredProcedure($user , $password) == 1;
+    $isValid = VerifyUserStoredProcedure($user, $password);
     return $isValid;
 }
 
@@ -27,7 +26,7 @@ function CheckUserStatus()
 
 function VerifyUserStoredProcedure($username, $password)
 {
-    $conn = DatabaseConnection();
+    $conn = GetDatabase();
     $sql = "CALL verifyUser('".$username."' , '".$password."', @msg);";
     $conn->query($sql);
     $res = $conn->query("SELECT @msg AS RESPONSE");
@@ -39,8 +38,8 @@ function VerifyUserStoredProcedure($username, $password)
 
 function AddUserStoredProcedure($username , $password)
 {
-    $conn = DatabaseConnection();
-    $sql = "CALL verifyUser('".$username."' , '".$password."', @msg);";
+    $conn = GetDatabase();
+    $sql = "CALL addUser('".$username."' , '".$password."', @msg);";
     $conn->query($sql);
     $res = $conn->query("SELECT @msg AS RESPONSE");
     $row = $res->fetch_assoc();
@@ -51,19 +50,15 @@ function AddUserStoredProcedure($username , $password)
 
 function AddUser($username , $password)
 {
-    $response = AddUserStoredProcedure($username, $password);
-
-    if($response == 1)
+    AddUserStoredProcedure($username, $password);
+    $userId = VerifyUser($username , $password);
+    if($userId !=0)
     {
-        return true;
-    }
-    else if(VerifyUser($username , $password))
-    {
-        return true;
+        return $userId;
     }
     else
     {
-        return false;
+        return 0;
     }
 }
 
