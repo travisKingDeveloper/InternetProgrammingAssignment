@@ -2,13 +2,27 @@
     float: left;
     padding: 0;
     border-style: none;
-    background-image: url("../../Assets/coolStock.jpg");
+    height: 100%;
+    background-color: black;
+}
+
+/*This creates the effect of a faded background image */
+
+#section::after {
+    content: "";
+    background: url(../../Assets/coolStock.jpg);
     background-repeat: repeat-y;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 
-    height: 100%;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
 }
 
 #paragraph {

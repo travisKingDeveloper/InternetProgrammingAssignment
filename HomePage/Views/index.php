@@ -208,18 +208,43 @@ include '../../Global/RenderScripts/MasterNavigationBar.php';
         <a href="">Assignment 7</a>
         <hr/>
         <p>
-            To be determined
+            This assignment was one I found very challenging because of the lengths I went to make this website a reality.
+            When I first looked at the problem I noticed that my SQL in populating the table was <i>very</i> sloppy. I queried
+            for all of the id's of relevant stock information, did another query for each of those queries to then obtain the information
+            needed to create the table. I found that this was very inefficient and was inflexible for the assignment that I was doing.
+            I recreated this by making an sql query that did an inner join on itself in order to obtain the most recent date of a transaction
+            with respect to the stock portfolio it has. With this I inner joined as I would before based off of foreign key relationships
+            and then I had the final query. After that was done I had to create the ajax call Get Table Row and I realized a pretty important
+            feature of PHP and internet programming in general. NEVER try to create the html dynamically on the backend. After talking
+            with someone who has done php development for over 5 years he said that is terrible practice and you should be building the
+            html via javascript on the front end as opposed to doing this in php. Lesson Learned, people get fired for that kind of thing.
+            Once I had the ajax file correct, the next step was making sure I called it right. I did this using the jquery get function. It was
+            after a small amount of time I was able to confirm that that worked but I couldn't figure out how to do anything with the information
+            that I had. I had two choices restructure the html so that it would be more appropriate or change what I did in the backend to use
+            JSON in order to more easily dynamically create tags. I went with the first understanding that it was bad practice and not to do it again.
+            All of this was done in the MyPortfolio page and is triggered by a drop down list being changed. Another Ajax call I did that
+            was much easier was querying the database for any stock tick identifiers that begin with what was previously typed in. This was the first
+            that I accomplished and this was through the help of a W3 schools tutorial. I was reading it and said, that would be perfect here and I
+            basically copied and pasted code and modified it to query my database. Getting all of the NASDAQ stock tick identifiers wasn't very hard,
+            but if this is ever to be live I need a more accurate way of keeping it up to date.
         </p>
         <h4>Learning Objectives</h4>
+        <h5>Travis' Takeaway</h5>
         <ul>
             <li>
-                TBD
+                Proper Internet Programming Practice
             </li>
             <li>
-                TBD
+                AJAX
             </li>
             <li>
-                TBD
+                JQUERY
+            </li>
+            <li>
+                Creating MySQL queries more effectively
+            </li>
+            <li>
+                Asking for help!
             </li>
         </ul>
     </div>

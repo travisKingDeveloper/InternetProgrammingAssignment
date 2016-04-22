@@ -69,7 +69,7 @@ include '../../Global/RenderScripts/MasterNavigationBar.php';
     </p>
     <hr/>
     <h3>Course Information</h3>
-    <img align="right" src="../../Assets/TravisAndKari.jpg" alt="us chillin"/>
+    <img align="right" style="border: medium black solid;;" src="../../Assets/TravisAndKari.jpg" alt="us chillin"/>
     <table width="400">
         <tr>
             <th>Course Title</th>
